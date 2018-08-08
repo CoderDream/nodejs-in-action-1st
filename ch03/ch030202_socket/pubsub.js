@@ -6,12 +6,15 @@ channel.clients = {};
 channel.subscriptions = {};
 
 // 添加join事件的监听器，保护用户的client对象，以便程序可以将数据发送给用户
-channel.on('join', (id, client)=> {
+channel.on('join', function(id, client) {
     this.clients[id] = client;
-    this.subscriptions[id] = (senderId, message)=> {
+    //function aaa(){}
+    //aaa.bind(this);
+    let self = this;
+    this.subscriptions[id] = function(senderId, message) {
         // 忽略发出这一广播数据的用户
         if (id !== senderId) {
-            this.clients[id].write(message);
+            self.clients[id].write(message);
         }
     };
     // 添加一个专门针对当前用户的broadcast事件监听器
