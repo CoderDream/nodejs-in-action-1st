@@ -1,0 +1,15 @@
+{
+  "name": "ch03",
+  "version": "0.0.1",
+  "description": "Minimalist multiroom chat server",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:CoderDream/nodejs-in-action-1st.git"
+  },
+  "private": true,
+  "dependencies": {
+    "request": "~2.87.0",
+    "socket.io": "~2.1.1",
+    "mime": "~1.2.7"
+  }
+}
