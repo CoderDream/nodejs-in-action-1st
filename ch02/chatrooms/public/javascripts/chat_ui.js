@@ -1,3 +1,4 @@
+'use strict';
 
 // 净化内容
 function divEscapedContentElement(message) {
@@ -60,22 +61,25 @@ $(document).ready(function() {
 
     // 显示可用房间列表
     socket.on('rooms', function(rooms) {
-        let room_list_object = $('#room-list');
-        room_list_object.empty();
+        let roomListObject = $('#room-list');
+        roomListObject.empty();
         for(let room in rooms) {
             if(!rooms.hasOwnProperty(room)) {
                 continue;
             }
             room = room.substring(1, room.length);
             if (room !== '') {
-                room_list_object.append(divEscapedContentElement(room));
+                roomListObject.append(divEscapedContentElement(room));
             }
         }
 
         // 点击房间名可以换到那个房间中
-        $('#room-list div').click(function() {
+        $('#room-list div').on('click', function() {
             chatApp.processCommand('/join ' + $(this).text());
-            $('#send-message').focus();
+            //$('#send-message').focus();
+            $('#send-message').on('focus', function () {
+                console.log('send-message-focus');
+            });
         });
     });
 
