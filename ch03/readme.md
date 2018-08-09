@@ -11,7 +11,7 @@
 
 ## 3.3.2 实现串行化流程控制 ##
 package.json
-```shell
+```javascript
 {
   "name": "application-name",
   "version": "0.0.1",
@@ -31,7 +31,7 @@ package.json
 ```
 random_story.js
 
-```nodejs
+```javascript
 let fs = require('fs');
 let request = require('request');
 let htmlparser = require('htmlparser');
