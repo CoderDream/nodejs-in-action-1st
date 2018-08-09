@@ -231,27 +231,64 @@ would: 1
 Process finished with exit code 0
 
 ```
+## 利用社区里的工具  ##
 
-```shell
+在简单的程序中使用社区附加模块中的流程控制工具
 
+```javascript
+let flow = require('nimble');
+let exec = require('child_process').exec;
+
+// 下载指定版本的Node源码
+function downloadNodeVersion(version, destination, callback) {
+    let url = 'http://nodejs.org/dist/node-v' + version + '.tar.gz';
+    let filepath = destination + '/' + version + '.tgz';
+    exec('curl ' + url + ' >' + filepath, callback);
+}
+
+// 按顺序执行串行化任务
+flow.series([
+    function (callback) {
+        // 并行下载
+        flow.parallel([
+            function (callback) {
+                console.log('Downloading Node v0.4.6...');
+                downloadNodeVersion('0.4.6', '/tmp', callback);
+            },
+            function (callback) {
+                console.log('Downloading Node v0.4.7...');
+                downloadNodeVersion('0.4.7', '/tmp', callback);
+            }
+        ], callback);
+    },
+    function (callback) {
+        console.log('Creating archive of downloaded files...');
+        exec(
+            // 创建归档文件
+            'tar cvf node_distros.tar /tmp/0.4.6.tgz /tmp/0.4.7.tgz',
+            function (error, stdout, stderr) {
+                if(error) {
+                    console.log('stdout: ' + stdout);
+                    console.log('stderr: ' + stderr);
+                }
+                console.log('All done!');
+                callback();
+            }
+        );
+    }
+]);
 ```
 
 ```shell
-
-```
-
-```shell
-
-```
-
-```shell
-
-```
-
-```shell
-
-```
-
-```shell
+[root@localhost ch030304]# node downloader.js 
+Downloading Node v0.4.6...
+Downloading Node v0.4.7...
+Creating archive of downloaded files...
+All done!
+[root@localhost ch030304]# cd /tmp/
+[root@localhost tmp]# ls -l
+total 9788
+-rw-r--r--. 1 root root 5008110 Aug 10 01:07 0.4.6.tgz
+-rw-r--r--. 1 root root 5011520 Aug 10 01:07 0.4.7.tgz
 
 ```
