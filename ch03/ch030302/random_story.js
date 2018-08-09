@@ -49,7 +49,8 @@ function parseRSSFeed (rss) {
     let handler = new htmlparser.RssHandler();
     let parser = new htmlparser.Parser(handler);
     parser.parseComplete(rss);
-    if (!handler.dom.length && !handler.dom.items.length) {
+    //if (!handler.dom.length || !handler.dom.items.length ) {
+    if (!handler.dom.items.length ) {
         return next(new Error('No RSS items found'));
     }
     let item = handler.dom.items.shift();

@@ -1,3 +1,4 @@
 http://feed.cnblogs.com/blog/sitehome/rss
 http://feed.cnblogs.com/blog/sitecateogry/java/rss
 http://feed.cnblogs.com/blog/sitecateogry/javascript/rss
+https://www.cnbeta.com/backend.php
