@@ -130,8 +130,6 @@ https://www.cnbeta.com/backend.php
 
 运行结果：
 ```shell
-"D:\Java\WebStorm 2018.2\bin\runnerw.exe" 
-D:\nodejs10_8_0_x64\node.exe --inspect-brk=58170 D:\Java\GitHub\nodejs-in-action-1st\ch03\ch030302\random_story.js
 Debugger listening on ws://127.0.0.1:58170/8c66c62c-72c3-4ac7-8afa-7e5155e8a17c
 For help, see: https://nodejs.org/en/docs/inspector
 Android P正式发布 华为四款机型将吃上第一口“馅饼”
