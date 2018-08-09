@@ -34,6 +34,7 @@ let server = net.createServer(function (client) {
     // 当有用户连到服务器上来时发出一个join事件，指明用户ID和client对象
     client.on('connect', function() {
         channel.emit('join', id, client);
+        console.log('join: ' + id);
     });
 
     // 当有用户发送数据时，发出一个频道broadcast事件，指明用户ID和消息
@@ -42,8 +43,10 @@ let server = net.createServer(function (client) {
         if (dataString === "shutdown\r\n") {
             channel.emit('shutdown');
         }
+        console.log(dataString);
         channel.emit('broadcast', id, dataString);
     });
+
     client.on('close', function() {
         channel.emit('leave', id);
     });

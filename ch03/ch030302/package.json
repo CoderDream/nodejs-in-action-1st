@@ -1,0 +1,16 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:CoderDream/nodejs-in-action-1st.git"
+  },
+  "dependencies": {
+    "request": "~2.87.0",
+    "htmlparser": "~1.7.7"
+  }
+}
