@@ -1,4 +1,4 @@
-
+let net = require('net');
 
 let EventEmitter = require('events').EventEmitter;
 let channel = new EventEmitter();
@@ -7,8 +7,6 @@ channel.on('join', function() {
 });
 
 channel.emit('join');
-
-let net = require('net');
 
 let server = net.createServer(function(socket) {
     // 当读取到新数据时处理的data事件
