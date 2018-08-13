@@ -19,11 +19,14 @@ channel.on('join', function(id, client) {
     this.on('broadcast', this.subscriptions[id]);
 });
 
+// 创建leave事件的监听器
 channel.on('leave', function(id) {
+    // 移除指定客户端的broadcast监听器
     channel.removeListener('broadcast', this.subscriptions[id]);
     channel.emit('broadcast', id, id + " has left the chat.\n");
 });
 
+// 创建停止服务的监听器
 channel.on('shutdown', function() {
     channel.emit('broadcast', '', "Chat has shut down.\n");
     channel.removeAllListeners('broadcast');
@@ -32,11 +35,18 @@ channel.on('shutdown', function() {
 let server = net.createServer(function (client) {
     let id = client.remoteAddress + ':' + client.remotePort;
     // 当有用户连到服务器上来时发出一个join事件，指明用户ID和client对象
-    client.on('connect', function() {
+    // client.on('connect', function() {
+    //     channel.emit('join', id, client);
+    //     console.log('join: ' + id);
+    // });
+    client.on('connect', function(id, client) {
+        let welcome = "Welcome!\n" + 'Guest online: ' + this.listeners('broadcast').length;
+        client.write(welcome + "\n");
+
         channel.emit('join', id, client);
         console.log('join: ' + id);
     });
-
+    
     // 当有用户发送数据时，发出一个频道broadcast事件，指明用户ID和消息
     client.on('data', function(data) {
         let dataString = data.toString();
@@ -48,6 +58,8 @@ let server = net.createServer(function (client) {
     });
 
     client.on('close', function() {
+        // 在用户断开连接时发出leave事件
+        console.log('close method called');
         channel.emit('leave', id);
     });
 });
