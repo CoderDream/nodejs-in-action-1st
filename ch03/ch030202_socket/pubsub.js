@@ -1,5 +1,5 @@
-let events = require('events')
-    , net = require('net');
+let events = require('events');
+let net = require('net');
 
 let channel = new events.EventEmitter();
 channel.clients = {};
@@ -44,9 +44,10 @@ let server = net.createServer(function (client) {
         client.write(welcome + "\n");
 
         channel.emit('join', id, client);
+        channel.emit('connect', id, client);
         console.log('join: ' + id);
     });
-    
+
     // 当有用户发送数据时，发出一个频道broadcast事件，指明用户ID和消息
     client.on('data', function(data) {
         let dataString = data.toString();
