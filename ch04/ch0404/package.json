@@ -1,0 +1,7 @@
+{
+  "name": "ch0404",
+  "version": "1.0.0",
+  "dependencies": {
+    "formidable": "^1.2.1"
+  }
+}
