@@ -8,6 +8,8 @@ http.createServer(function (req, res){
 function getTitles(res) {
     fs.readFile('./titles.json', function (err, data) {
         if (err) return hadError(err, res);
+
+        // 在这里不再创建一个else分支，而是直接return，因为如果出错的话，也没有必要继续执行这个函数了
         getTemplate(JSON.parse(data.toString()), res)
     })
 }
