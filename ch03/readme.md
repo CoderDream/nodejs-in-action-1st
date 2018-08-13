@@ -167,3 +167,30 @@ File {
 
 
 ### 4.5 用HTTPS 加强程序的安全性 ###
+
+
+
+
+
+```shell
+[root@localhost ch0405]# openssl genrsa 1024 > key.pem
+Generating RSA private key, 1024 bit long modulus
+...........................................................................................++++++
+...........................++++++
+e is 65537 (0x10001)
+[root@localhost ch0405]# openssl req -x509 -new -key key.pem > key-cert.pem
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [XX]:CN
+State or Province Name (full name) []:coderdream
+Locality Name (eg, city) [Default City]:WH
+Organization Name (eg, company) [Default Company Ltd]:
+Organizational Unit Name (eg, section) []:
+Common Name (eg, your name or your server's hostname) []:
+Email Address []:
+```
