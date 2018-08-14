@@ -1,0 +1,14 @@
+{
+  "name": "ch050201",
+  "version": "1.0.0",
+  "description": "mysql",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:CoderDream/nodejs-in-action-1st.git"
+  },
+  "dependencies": {
+    "mysql": "^2.16.0",
+    "querystring": "~0.2.0"
+  }
+}
