@@ -30,7 +30,7 @@ let server = http.createServer(function (req, res) {
                 case '/':
                     work.show(db, res);
                     break;
-                case '/archived':
+                case '/archive':
                     work.showArchived(db, res);
             }
             break;
@@ -50,6 +50,6 @@ db.query(
         if (err) throw err;
         console.log('Server started...');
         // 启动HTTP服务器
-        server.listen(3000, '127.0.0.1');
+        server.listen(3003, '127.0.0.1');
     }
 );

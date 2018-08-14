@@ -99,7 +99,7 @@ exports.show = function (db, res, showArchived) {
             if (err) throw err;
             let html = (showArchived)
                 ? ''
-                : '<a href="//archived">Archived Work</a><br/>';
+                : '<a href="/archive">Archived Work</a><br/>';
             // 将结果格式化为HTML表格
             html += exports.workHitlistHtml(rows);
             html += exports.workFormHtml();
