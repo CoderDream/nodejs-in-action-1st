@@ -1,0 +1,13 @@
+{
+  "name": "ch060201",
+  "version": "1.0.0",
+  "description": "connect-logger",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:CoderDream/nodejs-in-action-1st.git"
+  },
+  "dependencies": {
+    "connect": "~3.6.6"
+  }
+}
