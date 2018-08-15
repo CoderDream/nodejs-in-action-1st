@@ -1,0 +1,14 @@
+{
+  "name": "ch050301",
+  "version": "1.0.0",
+  "description": "redis-chat",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:CoderDream/nodejs-in-action-1st.git"
+  },
+  "dependencies": {
+    "net": "^1.0.2",
+    "redis": "^2.8.0"
+  }
+}

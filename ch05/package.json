@@ -1,8 +1,0 @@
-{
-  "name": "ch05",
-  "version": "1.0.0",
-  "dependencies": {
-    "pg": "^7.4.3",
-    "redis": "^2.8.0"
-  }
-}

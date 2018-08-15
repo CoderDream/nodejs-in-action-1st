@@ -1,0 +1,13 @@
+{
+  "name": "ch050202",
+  "version": "1.0.0",
+  "description": "postgres",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:CoderDream/nodejs-in-action-1st.git"
+  },
+  "dependencies": {
+    "pg": "~7.4.3"
+  }
+}
