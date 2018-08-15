@@ -79,64 +79,14 @@ Content-Length: 11
 ### 4.4 从表单中接受用户输入 ###
 
 ```shell
-name
+[root@localhost ~]# curl http://10.50.20.123:3000/foo -i
+HTTP/1.1 200 OK
+Content-Type: text/plain
+Date: Wed, 15 Aug 2018 09:48:46 GMT
+Connection: keep-alive
+Content-Length: 11
 
-file
-File {
-  _events: {},
-  _eventsCount: 0,
-  _maxListeners: undefined,
-  size: 1318,
-  path:
-   'C:\\Users\\Admin\\AppData\\Local\\Temp\\upload_214e5fc0c0936334baf0bd31e4cf8acf',
-  name: 'Node.js&#23454;&#25112;(&#31532;2&#23395;).txt',
-  type: 'text/plain',
-  hash: null,
-  lastModifiedDate: 2018-08-13T08:54:08.078Z,
-  _writeStream:
-   WriteStream {
-     _writableState:
-      WritableState {
-        objectMode: false,
-        highWaterMark: 16384,
-        finalCalled: true,
-        needDrain: false,
-        ending: true,
-        ended: true,
-        finished: true,
-        destroyed: true,
-        decodeStrings: true,
-        defaultEncoding: 'utf8',
-        length: 0,
-        writing: false,
-        corked: 0,
-        sync: false,
-        bufferProcessing: false,
-        onwrite: [Function: bound onwrite],
-        writecb: null,
-        writelen: 0,
-        bufferedRequest: null,
-        lastBufferedRequest: null,
-        pendingcb: 0,
-        prefinished: true,
-        errorEmitted: false,
-        emitClose: false,
-        bufferedRequestCount: 0,
-        corkedRequestsFree: [Object] },
-     writable: false,
-     _events: {},
-     _eventsCount: 0,
-     _maxListeners: undefined,
-     path:
-      'C:\\Users\\Admin\\AppData\\Local\\Temp\\upload_214e5fc0c0936334baf0bd31e4cf8acf',
-     fd: null,
-     flags: 'w',
-     mode: 438,
-     start: undefined,
-     autoClose: true,
-     pos: undefined,
-     bytesWritten: 1318,
-     closed: false } }
+hello world
 ```
 
 
@@ -158,6 +108,21 @@ Saved.
 Floss the cat
 Buy some hats
 [root@localhost ch050102]# 
+
+
+
+```
+
+
+```shell
+[root@localhost ~]# curl --user tobi:ferret http://10.50.20.123:3000/admin/users -i
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Wed, 15 Aug 2018 09:50:00 GMT
+Connection: keep-alive
+Content-Length: 22
+
+["tobi","loki","jane"]
 ```
 
 ### 5.3.2 MongoDB ###
