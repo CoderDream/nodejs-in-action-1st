@@ -1,0 +1,20 @@
+{
+  "name": "ch070101",
+  "version": "1.0.0",
+  "description": "basic-usage-connect",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:CoderDream/nodejs-in-action-1st.git"
+  },
+  "dependencies": {
+    "express": "~4.16.3",
+    "body-parser": "~1.18.3",
+    "crypto-js": "~3.1.9-1",
+    "express-session": "~1.15.6",
+    "cookie-parser": "^1.4.3",
+    "path": "~0.12.7",
+    "connect-multiparty": "~2.1.1",
+    "mongodb": "~3.1.4"
+  }
+}

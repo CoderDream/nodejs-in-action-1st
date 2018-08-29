@@ -1,0 +1,13 @@
+{
+  "name": "ch070101",
+  "version": "1.0.0",
+  "description": "basic-usage-connect",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:CoderDream/nodejs-in-action-1st.git"
+  },
+  "dependencies": {
+    "connect": "~3.6.6"
+  }
+}
