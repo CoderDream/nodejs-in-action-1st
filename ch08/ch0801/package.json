@@ -1,0 +1,13 @@
+{
+  "name": "ch0801",
+  "version": "1.0.0",
+  "description": "tiny-express",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:CoderDream/nodejs-in-action-1st.git"
+  },
+  "dependencies": {
+    "express": "~4.16.3"
+  }
+}
